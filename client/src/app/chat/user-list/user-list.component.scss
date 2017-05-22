@@ -1,37 +1,51 @@
-.chat-list {
+.users-list {
     display: flex;
     flex-direction: column;
     margin: 0;
-    margin-top: 10px;
     padding: 0;
 }
 
-.chat-list__item {
+.users-list__item {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 60px;
     flex-direction: row;
-    margin-bottom: 10px;
-    padding: 5px 24px;
+    padding: 10px 24px;
 }
 
-.chat-list__item:hover {
-    background-color: mediumpurple;
-    // cursor: pointer;
+.users-list__item:hover {
+    background-color: rgba(255,255,255,.65);
 }
 
-.chat-name__heading {
+.users-info__heading {
+    margin: 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
 }
 
-.chat-last-activity {
+.users-info__motto {
+    color: #989ad7;
+    font-size: 14px;
+    font-weight: 300;
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.users-sign {
     margin-left: auto;
     background: lightgrey;
-    padding: 3px 13px;
+    color: #3b3e99;
+    padding: 0 19.5px;
     border-radius: 15px;
+    line-height: 25px;
+}
+
+.avatar {
+    height: 60px;
 }
 
 .avatar__img {
@@ -39,11 +53,7 @@
     margin-right: 24px;
 }
 
-.activeLink {
-    background-color: purple;
-}
-
 .isLogged {
-    background-color: green;
-    color: white;
+    background-color: #fff;
+    color: #3b3e99;
 }

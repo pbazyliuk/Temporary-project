@@ -1,20 +1,6 @@
 <div class="user-menu">
 
-                    <div class="user-menu__item">
-                        <input type="checkbox" id="btn-account-info">
-                        <label for="btn-account-info" class="btn-arrow-label-sm">
-                            Add User
-                            <span class="btn-arrow-sm"></span>
-                        </label>
-                        <div class="user-menu__item-info">
-                            <form action="">
-                                    <input type="text" placeholder="Find User">
-                                    <input type="submit" value="Find">
-                            </form>
-                        </div>
-                    </div>  <!--end user-menu__item-->
-
-                    <div class="user-menu__item">
+                     <div class="user-menu__item">
                          <input type="checkbox" id="btn-settings">
                          <label for="btn-settings" class="btn-arrow-label-sm">
                             Add Chat
@@ -26,7 +12,6 @@
                               novalidate
                               (ngSubmit)="addChat($event, formAddChat.value)"
                               >
-                              <!--(click)="addChat(formAddChat.value)" -->
                               <label for="emailId"
                               
                               >Chat Name</label>
@@ -42,17 +27,9 @@
                               >Select Users</label>
                                     <select required #users="ngModel" [(ngModel)]="chat.users" name="users" id="usersIds" multiple>
                                         <option [ngValue]="user" *ngFor="let user of users$ | async">{{user.firstname}}</option>
-                                        <!--<option disabled selected>Choose friend</option>
-                                        <option value="sam">Sam</option>
-                                        <option value="max">Max</option>
-                                        <option value="andrew">Andrew</option>-->
-                                    </select>
-                                    <!--<select [(ngModel)]="selectedValue">
-                                      <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
-                                    </select>-->
+                                      </select>
                                     <br>
                                     <button type="submit" [disabled]="formAddChat.invalid">Add Chat</button>
-                                    <!--<input type="submit" value="Add Chat">-->
                                     {{formAddChat.value | json}}
                             </form>
                         </div>

@@ -45,10 +45,9 @@
 }
 
 
-.navbar__menu-item1 {
-    display: inline-block;
+.navbar__menu-item:last-child {
+    height: 81px;
     float: right;
-
 }
 
 .navbar__menu-link {

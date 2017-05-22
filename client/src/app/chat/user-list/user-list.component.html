@@ -1,12 +1,6 @@
 
-      <!--<ul>
-        <li *ngFor="let user of users$ | async">
-          <span>{{user.firstname}}</span>
-        </li>
-      </ul>-->
- 
-<ul class="chat-list">
-  <li class="chat-list__item" *ngFor='let user of usersOn$ | async | filterUserOnByName | filterUserByName: searchValue; let i = index' 
+<ul class="users-list">
+  <li class="users-list__item" *ngFor='let user of usersOn$ | async | filterUserOnByName | filterUserByName: searchValue; let i = index' 
  
   >
     <div class="avatar" >
@@ -16,11 +10,12 @@
         
     </div>
 
-    <div class="chat-info" >
-        <h4 class="chat-name__heading">{{user.firstname}}</h4>
+    <div class="users-info">
+        <h4 class="users-info__heading">{{user.firstname }}</h4>
+        <div class="users-info__motto">You can pass some info here...</div>
     </div>
 
-    <div class="chat-last-activity" [class.isLogged]="user.isLogged" >
+    <div class="users-sign" [class.isLogged]="user.isLogged" >
         {{user.isLogged === true ? 'on' : 'off'}}
     </div>
     

@@ -38,7 +38,7 @@ export class MessagesListComponent implements OnInit, OnDestroy {
   }
 
   mapStatetoUsersOn(state: ApplicationState) {
-    console.log('mapStatetoUsersOn', state.storeData.users);
+    // console.log('mapStatetoUsersOn', state.storeData.users);
     return state.storeData.users;
   }
 

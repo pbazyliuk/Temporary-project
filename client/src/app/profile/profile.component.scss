@@ -1,12 +1,12 @@
 .form__wrapper {
     background: #fff;
     box-sizing: border-box;
-    margin: 0 auto;
-    margin-top: calc((100vh - 60px - 514px)/2);
+    margin: 32px auto;
     min-height: 410px;
     padding: 32px;
     position: relative;
     width: 480px;
+    border: 1px solid #989ad7;
 }
 
 .form-profile {

@@ -1,7 +1,7 @@
 .user-menu {
     display: flex;
     flex-direction: column;
-    padding: 24px;
+    padding: 0 24px 24px 24px;
 }
 
 .user-menu__item-info {
@@ -32,7 +32,7 @@
 }
 
 .btn-arrow-label-sm {
-     background: lightgrey;
+     background: #989ad7;
      color: white;
      cursor: pointer;
      display: block;
@@ -46,23 +46,29 @@
 
 #btn-account-info:checked + .btn-arrow-label-sm + .user-menu__item-info {
     display: flex;
-    justify-content: center; }
+    justify-content: center;
+}
 
 #btn-account-info:checked + .btn-arrow-label-sm > .btn-arrow-sm {
-    transform: rotate(135deg); }
+    transform: rotate(135deg); 
+}
 
 #btn-account-info:checked + .btn-arrow-label-sm {
-    font-weight: 400; }
+    font-weight: 400; 
+}
 
 #btn-settings:checked + .btn-arrow-label-sm + .user-menu__item-info {
     display: flex;
-    justify-content: center; }
+    justify-content: center; 
+}
 
 #btn-settings:checked + .btn-arrow-label-sm > .btn-arrow-sm {
-    transform: rotate(135deg); }
+    transform: rotate(135deg); 
+}
 
 #btn-settings:checked + .btn-arrow-label-sm {
-    font-weight: 400; }
+    font-weight: 400; 
+}
 
 .form-add-chat {
     display: flex;
