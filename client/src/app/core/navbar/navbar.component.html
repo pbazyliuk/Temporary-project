@@ -1,13 +1,13 @@
 <nav class="navbar">
     <div class="navbar__logo-container">
-        <a class="navbar__logo-link" routerLink="/home" >
+        <a class="navbar__logo-link" routerLink="/home">
             <!--<div class="navbar__logo-item"></div>-->
             <img class="navbar__logo-item" src="../../../assets/img/logo.png" alt="logo">
         </a>
     </div>
     <ul class="navbar__menu">
         <li class="navbar__menu-item">
-            <a class="navbar__menu-link" routerLink="/home" routerLinkActive="active" >Home</a>
+            <a class="navbar__menu-link"  routerLink="/home" routerLinkActive="active" >Home</a>
         </li>
         <li class="navbar__menu-item">
             <a class="navbar__menu-link" routerLink="/chat" routerLinkActive="active" [hidden]="!authenticated">Chat</a>
@@ -20,8 +20,13 @@
         </li>-->
 
         <ng-container *ngIf="!authenticated">
-            <a class="navbar__menu-link" routerLink="/auth/login" routerLinkActive="active" [hidden]="authenticated">Login</a>
-            <a class="navbar__menu-link btn-register" routerLink="/auth/register" routerLinkActive="active" [hidden]="authenticated">Register</a>
+             <li class="navbar__menu-item">
+               <a class="navbar__menu-link" routerLink="/auth/login" routerLinkActive="active" [hidden]="authenticated">Login</a>
+            </li>
+           
+            <li class="navbar__menu-item">
+                <a class="navbar__menu-link btn-register" routerLink="/auth/register" routerLinkActive="active" [hidden]="authenticated">Register</a>
+            </li>
         </ng-container>
         <!--<li class="navbar__menu-item">    
              <a class="navbar__menu-link">
@@ -30,11 +35,21 @@
         </li>-->
 
         <li class="navbar__menu-item">
-            <a href="" class="navbar__menu-link" routerLink="/profile" [hidden]="!authenticated">Profile</a>
-            <a href="" class="navbar__menu-link" routerLink="/home" [hidden]="!authenticated" (click)="logoutAction()">{{email}} Logout</a>
+            <a href="" class="navbar__menu-link" routerLink="/profile" routerLinkActive="active" [hidden]="!authenticated">Profile</a>
         </li>
-    </ul>
 
+         <li class="navbar__menu-item">
+            <a href="" class="navbar__menu-link" [hidden]="!authenticated" routerLinkActive="active" (click)="logoutAction()">Logout</a>
+         </li>
+         <li class="navbar__menu-item1">
+            <span class="navbar__menu-wellcome" [hidden]="!authenticated">Hello, {{firstname}}</span>
+         </li>
+
+                
+            
+
+    </ul>
+    
 </nav>
 
 <!--<div class="user-profile" *ngIf="isLoggedIn">

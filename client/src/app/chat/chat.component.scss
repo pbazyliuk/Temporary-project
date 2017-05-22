@@ -1,10 +1,12 @@
  .wrapper {
     display: flex;
-    height: 600px;
+    height: 500px;
     width: 960px;
     align-items: center;
-    /*justify-content: center;*/
+    justify-content: center;
     margin: 0 auto;
+    margin-top: calc((100vh - 81px - 500px)/2);
+    border: 1px solid #3B3E99;
     
 }
 

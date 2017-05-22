@@ -41,7 +41,14 @@
 
 .navbar__menu-item {
     display: inline-block;
-    
+
+}
+
+
+.navbar__menu-item1 {
+    display: inline-block;
+    float: right;
+
 }
 
 .navbar__menu-link {
@@ -49,20 +56,31 @@
     font-size: 21px;
     color: #989AD7;
     font-weight: 400;
+    
     margin-left: 75px;
+}
+
+.navbar__menu-wellcome {
+    text-decoration: none;
+    font-size: 21px;
+    color: #3b3e99;
+    font-weight: 400;    
+    // float: right;
 }
 
 .navbar__menu-item:last-child .navbar__menu-link {
     margin-right: 0;
 }
 
-.menu-list li a:hover {
-    color: #989AD7;
+.navbar__menu-link:hover {
+    color: #3b3e99;
+    transition: color .5s;
 }
 
 .active {
     font-weight: 600;
     color: #3b3e99;
+    transition: color .5s;
     // padding-bottom: 4px;
     // border-bottom: 2px solid #989AD7;
 }

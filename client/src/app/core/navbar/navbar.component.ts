@@ -16,6 +16,7 @@ import { WsService } from 'app/ws.service';
 export class NavbarComponent implements OnInit, OnDestroy {
 
   public email = '';
+  public firstname = '';
   public authenticated = false;
 
   constructor( private loginService: LoginService, private router: Router, private store: Store<ApplicationState>,
@@ -24,6 +25,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
       state => {
         console.log('Navbar Component section received state', state);
         if (state.uiState.user) {
+          this.firstname = state.uiState.user.firstname;
           this.email = state.uiState.user.email;
           this.authenticated = state.uiState.authenticated;
         } else {

@@ -14,20 +14,32 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 export class MessagesListComponent implements OnInit, OnDestroy {
   public messages$: Observable<object>;
   public author;
+  public authenticated;
+  
 
   public searchMessage = '';
   public subscriptions: Subscription[] = [];
+
+  public usersOn111$: Observable<object>;
 
   constructor(
     private store: Store<ApplicationState>,
     private MainPartChatService: MainPartChatService
   ) {
     store.subscribe(state => {
-      return this.author = state.uiState.user.firstname;
+      this.author = state.uiState.user.firstname;
     });
 
     this.messages$ = store
       .map(this.mapStatetoMessages);
+    
+    this.usersOn111$ = store
+        .map(this.mapStatetoUsersOn);
+  }
+
+  mapStatetoUsersOn(state: ApplicationState) {
+    console.log('mapStatetoUsersOn', state.storeData.users);
+    return state.storeData.users;
   }
 
   mapStatetoMessages(state: ApplicationState) {

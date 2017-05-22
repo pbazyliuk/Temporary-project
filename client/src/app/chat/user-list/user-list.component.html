@@ -10,7 +10,10 @@
  
   >
     <div class="avatar" >
-        <img class="avatar__img" src="http://placehold.it/60x60" alt="avatar-image">
+         
+         <img *ngIf="user.isLogged" class="avatar__img" src="../../../assets/img/user-on5-avatar.png" alt="avatar-image">
+         <img *ngIf="!user.isLogged" class="avatar__img" src="../../../assets/img/user-off5-avatar.png" alt="avatar-image">
+        
     </div>
 
     <div class="chat-info" >

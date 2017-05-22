@@ -6,9 +6,14 @@
     [class.user-message-friend]="message.userName !== author"
     *ngFor='let message of messages$ | async | filterMessageByText: searchMessage; let i = index'>
         <div class="user-message-wrapper">
-      
-            <div class="avatar ">
-                <img class="avatar__img" src="http://placehold.it/60x60" alt="">
+            
+            <div class="avatar" *ngFor="let userOn of usersOn111$ | async">
+                <!--{{userOn.firstname}}-->
+          
+                <!--{{userOn | json}}-->
+                 <img *ngIf="message.userName === userOn.firstname && userOn.isLogged" class="avatar__img" src="../../../../assets/img/user-on5-avatar.png" alt="avatar-image">
+                 <img *ngIf="message.userName === userOn.firstname && !userOn.isLogged" class="avatar__img" src="../../../../assets/img/user-off5-avatar.png" alt="avatar-image">
+                 <!--<img *ngIf="!user.isLogged" class="avatar__img" src="../../../../assets/img/user-off2-avatar" alt="avatar-image">-->
             </div>
             <div class="user-message__text">
                 {{message.userName}}>>{{message.text}}
@@ -20,5 +25,6 @@
            2h
         </div>
     </li>
+    {{authenticated}}
 </ul>
 

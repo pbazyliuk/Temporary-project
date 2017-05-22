@@ -1,3 +1,5 @@
+
+
 <div class="form__wrapper">
 
   <form #formSignIn="ngForm" novalidate class="form-sign-in" (ngSubmit)="signInSubmit(formSignIn.value)">
@@ -7,9 +9,10 @@
     <div class="form-sign-in__container">
       <label class="form-sign-in__label" for="emailId" [class.header-has-error]="email.invalid && email.touched">Email</label>
       <input class="form-sign-in__input-field" id="emailId" type="text" name="email" placeholder="Email Address (required)" #email="ngModel"
-        required [class.input-has-error]="email.invalid && email.touched" [ngModel]="user.email">
+        required [class.input-has-error]="email.invalid && email.touched" [ngModel]="user.email"
+        pattern="[^@]+@[^@]+\.[a-zA-Z]{2,}">
       <div *ngIf="email.invalid && email.touched" class="text-has-error">
-        Email is required
+        Email is required and should be valid
       </div>
     </div>
 
