@@ -11,7 +11,7 @@ import { GetAllPrivateMessagesSuccessActions } from 'app/store/actions';
 @Component({
   selector: 'ct-private-message-input',
   templateUrl: './private-message-input.component.html',
-  styleUrls: ['./private-message-input.component.css']
+  styleUrls: ['./private-message-input.component.scss']
 })
 export class PrivateMessageInputComponent implements OnInit, OnDestroy {
 

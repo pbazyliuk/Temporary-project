@@ -10,7 +10,7 @@ import { WsService } from 'app/ws.service';
 @Component({
   selector: 'ct-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.scss']
 })
 
 export class NavbarComponent implements OnInit, OnDestroy {

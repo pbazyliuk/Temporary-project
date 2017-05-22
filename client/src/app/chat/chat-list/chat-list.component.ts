@@ -13,7 +13,7 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 @Component({
   selector: 'ct-chat-list',
   templateUrl: './chat-list.component.html',
-  styleUrls: ['./chat-list.component.css']
+  styleUrls: ['./chat-list.component.scss']
 })
 export class ChatListComponent implements OnInit, OnDestroy {
   public searchValue = '';

@@ -2,7 +2,7 @@
 
   <form action="" class="form-sign-up" [formGroup]="signUpForm" novalidate (ngSubmit)="signUpSubmit(signUpForm)">
 
-    <h3 class="form-sign-up__header">Sign Up</h3>
+    <h3 class="form-sign-up__header">Register Form</h3>
 
     <div class="form-sign-up__container">
       <div class="form-sign-up__container--narrow">
@@ -81,6 +81,6 @@
         </span>
       </div>
     </div>
-    <button class="form-sign-up__btn-register" type="submit" [disabled]="signUpForm.invalid">Get Started</button>
+    <button class="form-sign-up__btn-register" type="submit" [disabled]="signUpForm.invalid">Sign Up</button>
   </form>
 </div>

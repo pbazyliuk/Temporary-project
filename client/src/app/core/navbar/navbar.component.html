@@ -1,7 +1,8 @@
 <nav class="navbar">
     <div class="navbar__logo-container">
         <a class="navbar__logo-link" routerLink="/home" >
-            <img class="navbar__logo-item" src="http://placehold.it/120x60" alt="">
+            <!--<div class="navbar__logo-item"></div>-->
+            <img class="navbar__logo-item" src="../../../assets/img/logo.png" alt="logo">
         </a>
     </div>
     <ul class="navbar__menu">
@@ -20,7 +21,7 @@
 
         <ng-container *ngIf="!authenticated">
             <a class="navbar__menu-link" routerLink="/auth/login" routerLinkActive="active" [hidden]="authenticated">Login</a>
-            <a class="navbar__menu-link" routerLink="/auth/register" routerLinkActive="active" [hidden]="authenticated">Register</a>
+            <a class="navbar__menu-link btn-register" routerLink="/auth/register" routerLinkActive="active" [hidden]="authenticated">Register</a>
         </ng-container>
         <!--<li class="navbar__menu-item">    
              <a class="navbar__menu-link">

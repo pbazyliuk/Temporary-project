@@ -11,7 +11,7 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 @Component({
   selector: 'ct-chat-menu',
   templateUrl: './chat-menu.component.html',
-  styleUrls: ['./chat-menu.component.css']
+  styleUrls: ['./chat-menu.component.scss']
 })
 
 export class ChatMenuComponent implements OnInit {

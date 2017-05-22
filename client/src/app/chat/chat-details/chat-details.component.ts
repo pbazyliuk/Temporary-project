@@ -5,7 +5,7 @@ import { ApplicationState } from 'app/store/application-state';
 @Component({
   selector: 'ct-chat-details',
   templateUrl: './chat-details.component.html',
-  styleUrls: ['./chat-details.component.css']
+  styleUrls: ['./chat-details.component.scss']
 })
 export class ChatDetailsComponent implements OnInit {
 

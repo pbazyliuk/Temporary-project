@@ -1,8 +1,0 @@
-<!--<div class="message-input" contenteditable="true">
-    Type Something...
-</div>-->
-<div *ngFor="let message of messages">
-  <strong>{{message.name}}: </strong>{{message.text}} 
-</div>
-<input [(ngModel)]="message"  /><button (click)="sendMessage()">Send</button>
-{{message}}

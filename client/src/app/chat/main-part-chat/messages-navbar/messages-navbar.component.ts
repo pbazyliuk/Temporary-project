@@ -4,7 +4,7 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 @Component({
   selector: 'ct-messages-navbar',
   templateUrl: './messages-navbar.component.html',
-  styleUrls: ['./messages-navbar.component.css']
+  styleUrls: ['./messages-navbar.component.scss']
 })
 
 export class MessagesNavbarComponent implements OnInit {

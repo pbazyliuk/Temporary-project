@@ -10,7 +10,7 @@ declare const gapi: any;
 @Component ({
   selector: 'ct-alt-login-google',
   templateUrl: './alt-login-google.component.html',
-  styleUrls: ['./alt-login-google.component.css']
+  styleUrls: ['./alt-login-google.component.scss']
 })
 export class AltLoginGoogleComponent implements OnInit {
 

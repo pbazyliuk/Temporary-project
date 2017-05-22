@@ -9,7 +9,7 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 @Component({
   selector: 'ct-private-part-chat',
   templateUrl: './private-part-chat.component.html',
-  styleUrls: ['./private-part-chat.component.css']
+  styleUrls: ['./private-part-chat.component.scss']
 })
 
 export class PrivatePartChatComponent implements OnInit, OnDestroy {

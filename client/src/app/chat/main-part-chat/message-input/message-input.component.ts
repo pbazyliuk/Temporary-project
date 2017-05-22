@@ -11,7 +11,7 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 @Component({
   selector: 'ct-message-input',
   templateUrl: './message-input.component.html',
-  styleUrls: ['./message-input.component.css']
+  styleUrls: ['./message-input.component.scss']
 })
 
 export class MessageInputComponent implements OnInit, OnDestroy {

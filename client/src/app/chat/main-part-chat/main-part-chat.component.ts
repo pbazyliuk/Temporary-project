@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'ct-main-part-chat',
   templateUrl: './main-part-chat.component.html',
-  styleUrls: ['./main-part-chat.component.css']
+  styleUrls: ['./main-part-chat.component.scss']
 })
 export class MainPartChatComponent implements OnInit {
   private message;

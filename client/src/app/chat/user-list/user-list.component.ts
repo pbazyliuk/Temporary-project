@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'ct-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.scss']
 })
 
 export class UserListComponent implements OnInit, OnDestroy {

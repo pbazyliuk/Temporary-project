@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs/Subscription';
 @Component({
   selector: 'ct-private-message-list',
   templateUrl: './private-message-list.component.html',
-  styleUrls: ['./private-message-list.component.css']
+  styleUrls: ['./private-message-list.component.scss']
 })
 
 export class PrivateMessageListComponent implements OnInit, OnDestroy {
