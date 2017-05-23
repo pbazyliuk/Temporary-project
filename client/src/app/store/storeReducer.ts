@@ -135,7 +135,7 @@ function handleRegisterSuccessAction(state, action) {
   newState.uiState = {
     user: action.payload.user,
     authenticated: true,
-    usersOn: [action.payload.user],
+    // usersOn: [action.payload.user],
     currentChat: ''
   };
 
@@ -155,7 +155,7 @@ function handleLogoutSuccessAction(state: ApplicationState, action: LoadChatList
   newState.uiState = {
     authenticated: undefined,
     user: undefined,
-    usersOn: [],
+    // usersOn: [],
     currentChat: ''
   };
 
@@ -175,16 +175,16 @@ function handleLoadChatListsAction (state: ApplicationState, action: LoadChatLis
           }
         }
       });
-    usersOn = usersOn.filter(function(user) {
-      if (user.isLogged === true) {
-        return true;
-      }
-      return false;
-    });
+    // usersOn = usersOn.filter(function(user) {
+    //   if (user.isLogged === true) {
+    //     return true;
+    //   }
+    //   return false;
+    // });
   };
   const newState: ApplicationState = Object.assign({}, state);
   newState.storeData.users = userData.users;
-  newState.uiState.usersOn = usersOn;
+  // newState.uiState.usersOn = usersOn;
 
   return newState;
 }
@@ -198,7 +198,7 @@ function handleLoginSuccessAction(state, action) {
     newState.uiState = {
       user: action.payload.user,
       authenticated: true,
-      usersOn: [action.payload.user],
+      // usersOn: [action.payload.user],
       currentChat: ''
     };
   return newState;
