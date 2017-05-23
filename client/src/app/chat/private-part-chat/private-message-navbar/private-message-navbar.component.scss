@@ -10,6 +10,38 @@
     margin-right: 25px;
 }
 
+.btn-back {
+    text-decoration: none;
+    margin-right: 26px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #989ad7;
+}
+
+// .btn-back:before {
+//     content: "\f177";
+//     font-family: FontAwesome;
+//     font-size: 18px;
+//     color: #989ad7;
+//     cursor: pointer;
+// }
+
+.btn-back:hover {
+    color: #3b3e99;
+}
+
+.logo__link {
+    text-decoration: none;
+}
+
+.chatname {
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: #3b3e99;
+}
+
 .search-form {
     position: relative;
 }

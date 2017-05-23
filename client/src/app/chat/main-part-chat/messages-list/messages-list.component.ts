@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { ApplicationState } from 'app/store/application-state';
 import { Subscription } from 'rxjs/Subscription';
 import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'ct-messages-list',
@@ -15,12 +16,13 @@ export class MessagesListComponent implements OnInit, OnDestroy {
   public messages$: Observable<object>;
   public author;
   public authenticated;
+  public date = Date.now();
   
 
   public searchMessage = '';
   public subscriptions: Subscription[] = [];
 
-  public usersOn111$: Observable<object>;
+  public usersOn1$: Observable<object>;
 
   constructor(
     private store: Store<ApplicationState>,
@@ -33,7 +35,7 @@ export class MessagesListComponent implements OnInit, OnDestroy {
     this.messages$ = store
       .map(this.mapStatetoMessages);
     
-    this.usersOn111$ = store
+    this.usersOn1$ = store
         .map(this.mapStatetoUsersOn);
   }
 

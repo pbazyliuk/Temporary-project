@@ -1,24 +1,28 @@
 <!--<h3>MESSAGES LIST</h3>-->
-<h2>{{chatname}}</h2>
+<!--<h2>{{chatname}}</h2>-->
 <ul class="message-list">
-  Private messages goes here
+  <!--Private messages goes here-->
     <li
     [class.user-message-author]="privateMessage.userName === author"
     [class.user-message-friend]="privateMessage.userName !== author"
     *ngFor='let privateMessage of privateMessages$ | async | filterPrivateMessageByText: searchPrivateMessage; let i = index'>
         <div class="user-message-wrapper">
       
-            <div class="avatar ">
-                <img class="avatar__img" src="../../../../assets/img/user-on-avatar" alt="">
+            <div class="avatar" *ngFor="let userOn of usersOn$ | async">
+                 <img *ngIf="privateMessage.userName === userOn.firstname && userOn.isLogged" class="avatar__img" src="../../../../assets/img/user-on5-avatar.png" alt="avatar-image">
+                 <img *ngIf="privateMessage.userName === userOn.firstname && !userOn.isLogged" class="avatar__img" src="../../../../assets/img/user-off5-avatar.png" alt="avatar-image">
             </div>
-            <div class="user-message__text" >
-                {{privateMessage.userName}}>>{{privateMessage.text}}
+            <div class="user-message__text-cotainer">
+                 <span class="user-message__text-author">{{privateMessage.userName}}</span>
+                 <div class="user-message__text-message">{{privateMessage.text}}</div>
             </div>
+            
               
         </div>
 
-        <div class="user-message__publication-date">
-           2h
+        <div class="user-message__date-container">
+            <span class="user-message__time">{{privateMessage.timestamp |  date:'shortTime'}} </span>
+            <span class="user-message__date">{{privateMessage.timestamp |  date:'mediumDate'}}</span>
         </div>
     </li>
 </ul>

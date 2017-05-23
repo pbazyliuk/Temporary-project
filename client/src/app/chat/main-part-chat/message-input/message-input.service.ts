@@ -8,6 +8,7 @@ import { Http } from '@angular/http';
     constructor(private http: Http) {}
 
     sendMessage(message) {
+      console.log('MESSAGE INPUT SERVICE WORKING')
       return this.http.post('http://localhost:8090/api/messages', message).map(res => res.json());
     }
 

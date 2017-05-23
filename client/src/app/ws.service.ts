@@ -27,6 +27,7 @@ export class WsService {
   }
 
   sendMessage(message) {
+    console.log('WS is working');
     this.socketRoot.emit('add-message', message);
   }
 

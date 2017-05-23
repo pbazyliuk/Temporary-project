@@ -7,7 +7,7 @@
     *ngFor='let message of messages$ | async | filterMessageByText: searchMessage; let i = index'>
         <div class="user-message-wrapper">
             
-            <div class="avatar" *ngFor="let userOn of usersOn111$ | async">
+            <div class="avatar" *ngFor="let userOn of usersOn1$ | async">
                 <!--{{userOn.firstname}}-->
           
                 <!--{{userOn | json}}-->
@@ -15,16 +15,17 @@
                  <img *ngIf="message.userName === userOn.firstname && !userOn.isLogged" class="avatar__img" src="../../../../assets/img/user-off5-avatar.png" alt="avatar-image">
                  <!--<img *ngIf="!user.isLogged" class="avatar__img" src="../../../../assets/img/user-off2-avatar" alt="avatar-image">-->
             </div>
-            <div class="user-message__text">
-                {{message.userName}}>>{{message.text}}
+            <div class="user-message__text-cotainer">
+                 <span class="user-message__text-author">{{message.userName}}</span>
+                 <div class="user-message__text-message">{{message.text}}</div>
             </div>
-              
+             
         </div>
 
-        <div class="user-message__publication-date">
-           2h
+        <div class="user-message__date-container">
+            <span class="user-message__time">{{message.timestamp |  date:'shortTime'}} </span>
+            <span class="user-message__date">{{message.timestamp |  date:'mediumDate'}}</span>
         </div>
     </li>
-    {{authenticated}}
 </ul>
 

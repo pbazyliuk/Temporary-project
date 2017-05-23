@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.serv
 })
 
 export class PrivateMessageNavbarComponent implements OnInit {
-
+  @Input() chatname: string;
   public searchPrivateMessage = '';
 
   constructor(private MainPartChatService: MainPartChatService) { }

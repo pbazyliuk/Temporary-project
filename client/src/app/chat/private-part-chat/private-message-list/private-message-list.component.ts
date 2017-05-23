@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { ApplicationState } from 'app/store/application-state';
 import { MainPartChatService } from 'app/chat/main-part-chat/main-part-chat.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: 'ct-private-message-list',
@@ -20,6 +21,7 @@ export class PrivateMessageListComponent implements OnInit, OnDestroy {
   public searchPrivateMessage = '';
 
   public subscriptions: Subscription[] = [];
+  public usersOn$: Observable<object>;
 
   constructor(
      private store: Store<ApplicationState>,
@@ -31,6 +33,15 @@ export class PrivateMessageListComponent implements OnInit, OnDestroy {
     });
     this.privateMessages$ = store
       .map(this.mapStatetoPrivateMessages);
+
+    
+    this.usersOn$ = store
+          .map(this.mapStatetoUsersOn);
+  }
+
+  mapStatetoUsersOn(state: ApplicationState) {
+    // console.log('mapStatetoUsersOn', state.storeData.users);
+    return state.storeData.users;
   }
 
   mapStatetoPrivateMessages(state: ApplicationState) {
