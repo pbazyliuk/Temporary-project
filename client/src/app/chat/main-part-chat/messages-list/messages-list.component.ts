@@ -46,6 +46,11 @@ export class MessagesListComponent implements OnInit, OnDestroy {
 
   mapStatetoMessages(state: ApplicationState) {
     console.log('mapStatetoMessages', state.storeData.messages);
+    var arr = state.storeData.messages;
+    console.log(arr.sort(function(a,b) {
+      if(a.timestamp > b.timestamp) return 1;
+      else return -1;
+    }));
     return state.storeData.messages;
   }
 
