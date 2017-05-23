@@ -18,7 +18,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 
 export class UserListComponent implements OnInit, OnDestroy {
-
+  
   public searchValue = '';
   public subscriptions: Subscription[] = [];
 

@@ -1,38 +1,36 @@
 <div class="user-menu">
 
-                     <div class="user-menu__item">
-                         <input type="checkbox" id="btn-settings">
-                         <label for="btn-settings" class="btn-arrow-label-sm">
-                            Add Chat
+  <div class="user-menu__item">
+    <input type="checkbox" id="btn-settings">
+    <label for="btn-settings" class="btn-arrow-label-sm">
+                            ADD CHAT
                             <span class="btn-arrow-sm"></span>
                         </label>
-                         <div class="user-menu__item-info">
-                             <form class="form-add-chat" action="" name="form-add-chat"
-                              #formAddChat="ngForm"
-                              novalidate
-                              (ngSubmit)="addChat($event, formAddChat.value)"
-                              >
-                              <label for="emailId"
-                              
-                              >Chat Name</label>
-                                <input type="text" name="chatName" id="emailId" placeholder="Chat Name (required)" 
-                                  #chatName="ngModel" 
-                                  required
-                                 
-                                  [(ngModel)]="chat.name"
-                                  >
+    <div class="user-menu__item-info">
+      <form class="form-add-chat" action="" name="form-add-chat" #formAddChat="ngForm" novalidate (ngSubmit)="addChat($event, formAddChat.value)">
+        <div class="form-add-chat__container">
+            <label class="form-add-chat__label" for="emailId"
+            [class.header-has-error]="chatName.invalid && chatName.touched">Chat Name</label>
+            <input class="form-add-chat__input-field" type="text" name="chatName" id="emailId" placeholder="Chat Name (required)" #chatName="ngModel" required [(ngModel)]="chat.name"
+            pattern=".{4,}"
+            autocomplete="off"
+            [class.input-has-error]="chatName.invalid && chatName.touched">
+            <div *ngIf="chatName.invalid && chatName.touched" class="text-has-error">
+                Chatname is required (min 4 characters)
+            </div>
+        </div>
+       
+        <div class="form-add-chat__container">
+        <label for="selectUsersId" class="form-add-chat__label">Select Users</label>
+            <select class="form-add-chat__select-field" required #users="ngModel" [(ngModel)]="chat.users" name="users" id="usersIds" multiple>
+                <option [ngValue]="user" *ngFor="let user of users$ | async">{{user.firstname}}</option>
+            </select>
+        </div>
+        <button type="submit" class="form-add-chat__btn-submit" [disabled]="formAddChat.invalid">ADD CHAT</button>
+      </form>
+    </div>
+  </div>
+  <!--end user-menu__item-->
 
-                                  <label for="selectUsersId"
-                              
-                              >Select Users</label>
-                                    <select required #users="ngModel" [(ngModel)]="chat.users" name="users" id="usersIds" multiple>
-                                        <option [ngValue]="user" *ngFor="let user of users$ | async">{{user.firstname}}</option>
-                                      </select>
-                                    <br>
-                                    <button type="submit" [disabled]="formAddChat.invalid">Add Chat</button>
-                                    {{formAddChat.value | json}}
-                            </form>
-                        </div>
-                    </div>   <!--end user-menu__item-->
-
-                </div>    <!--end user-menu-->
+</div>
+<!--end user-menu-->
