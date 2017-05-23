@@ -33,7 +33,7 @@ exports.createChat = function(req, res) {
             if(!chats.length) {
               var chatObj = {
                 name: req.body.chatName,
-                messageIds: [],
+                privateMessages: [],
                 usersIds: usersIds,
                 usersNames: usersNames
               }
@@ -52,9 +52,9 @@ exports.createChat = function(req, res) {
 
   exports.createPrivateMessage = function(req, res) {
     var messagesObj = {};
-    messagesObj.messageIds = [];
-    messagesObj.messageIds.push(req.body)
-    Chat.findOneAndUpdate({name: req.params.id},  {$push: {messageIds: req.body}}, function(err, chat) {
+    messagesObj.privateMessages = [];
+    messagesObj.privateMessages.push(req.body)
+    Chat.findOneAndUpdate({name: req.params.id},  {$push: {privateMessages: req.body}}, function(err, chat) {
       if(err) return err;
       res.send({message: `message added to chat: ${req.params.id}`});
     })

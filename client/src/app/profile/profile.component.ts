@@ -4,8 +4,9 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { ApplicationState } from 'app/store/application-state';
 import { ProfileService } from 'app/profile/profile.service';
-import { UpdateProfileSuccessActions } from 'app/store/actions';
+import { UpdateProfileSuccessActions, LogoutSuccessActions } from 'app/store/actions';
 import { Router } from '@angular/router';
+import { LoginService } from "app/auth/shared";
 
 function dateCompare(c: AbstractControl): {[key: string]: boolean} | null {
   const startControl = c.get('currentpassword');
@@ -32,6 +33,7 @@ export class ProfileComponent implements OnInit {
   constructor(
     private store: Store<ApplicationState>,
     private profileservice: ProfileService,
+    private LoginService: LoginService,
     private router: Router,
     private fb: FormBuilder) {
       this.storeConnection = store.subscribe (
@@ -61,7 +63,11 @@ export class ProfileComponent implements OnInit {
             this.store.dispatch(
               new UpdateProfileSuccessActions(newUserInfo)
           );
-          this.router.navigate(['chat']);
+          
+          this.LoginService.logout();
+          this.store.dispatch(
+            new LogoutSuccessActions());
+          this.router.navigate(['auth/login']);
           },
           this.onLoginError);
        }

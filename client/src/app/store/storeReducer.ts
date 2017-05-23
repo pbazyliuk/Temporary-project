@@ -70,7 +70,7 @@ function handleAddPrivateMessageActions(state, action) {
 
   newState.storeData.chats.forEach((chat) => {
     if (chat['name'] === chatname) {
-      chat.messageIds.push(privateMessage);
+      chat.privateMessages.push(privateMessage);
     }
   });
 
@@ -84,7 +84,7 @@ function handleGetAllPrivateMessagesActions(state, action) {
 
   newState.storeData.chats.forEach((chat) => {
     if (chat['name'] === privateChatData.name) {
-      chat.messageIds = [...privateChatData.messageIds];
+      chat.privateMessages = [...privateChatData.privateMessages];
     }
   });
 

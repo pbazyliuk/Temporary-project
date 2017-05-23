@@ -53,8 +53,8 @@ export class PrivateMessageListComponent implements OnInit, OnDestroy {
        console.log(indexChat);
       }
     });
-    console.log(state.storeData.chats[indexChat].messageIds);
-    return state.storeData.chats[indexChat].messageIds;
+    console.log(state.storeData.chats[indexChat].privateMessages);
+    return state.storeData.chats[indexChat].privateMessages;
   }
 
   ngOnInit() {

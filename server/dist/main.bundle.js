@@ -2898,8 +2898,8 @@ var PrivateMessageListComponent = (function () {
                 console.log(indexChat);
             }
         });
-        console.log(state.storeData.chats[indexChat].messageIds);
-        return state.storeData.chats[indexChat].messageIds;
+        console.log(state.storeData.chats[indexChat].privateMessages);
+        return state.storeData.chats[indexChat].privateMessages;
     };
     PrivateMessageListComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -3454,7 +3454,7 @@ function handleAddPrivateMessageActions(state, action) {
     var newState = Object.assign({}, state);
     newState.storeData.chats.forEach(function (chat) {
         if (chat['name'] === chatname) {
-            chat.messageIds.push(privateMessage);
+            chat.privateMessages.push(privateMessage);
         }
     });
     return newState;
@@ -3464,7 +3464,7 @@ function handleGetAllPrivateMessagesActions(state, action) {
     var newState = Object.assign({}, state);
     newState.storeData.chats.forEach(function (chat) {
         if (chat['name'] === privateChatData.name) {
-            chat.messageIds = privateChatData.messageIds.slice();
+            chat.privateMessages = privateChatData.privateMessages.slice();
         }
     });
     return newState;

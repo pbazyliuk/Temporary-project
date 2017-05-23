@@ -29,7 +29,10 @@ export class MessagesListComponent implements OnInit, OnDestroy {
     private MainPartChatService: MainPartChatService
   ) {
     store.subscribe(state => {
-      this.author = state.uiState.user.firstname;
+      if(state.uiState.user) {
+         this.author = state.uiState.user.firstname;
+      }
+      return;
     });
 
     this.messages$ = store
