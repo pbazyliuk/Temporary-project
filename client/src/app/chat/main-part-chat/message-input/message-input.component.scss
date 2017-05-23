@@ -1,22 +1,73 @@
+.message-input-container {
+    text-align: center;
+}
+
 .message-input {
-    background-color: lightgrey;
+    background-color: #cccccc;
+    color: #3b3e99;
+    font-family: "Open Sans", "Arial", sans-serif;
     border-radius: 15px;
     box-sizing: border-box;
     margin: 24px auto 30px;
     margin-bottom: 32px;
+    margin-right: 20px;
     min-height: 32px;
     padding: 7px 16px;
     position: relative;
-    width: 343px;
+    width: 355px;
+    border: none;
 }
 
-.message-input:after {
-    background-color: none;
-    color: grey;
-    content: "\f118";
+// .message-input:after {
+//     background-color: none;
+//     color: grey;
+//     content: "\f118";
+//     cursor: pointer;
+//     font-family: FontAwesome;
+//     font-size: 16px;
+//     position: absolute;
+//     right: 16px;
+    
+// }
+
+.message-btn-submit {
+    background-color: #3b3e99;
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-weight: 400;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    box-sizing: border-box;
+    margin: 24px auto 30px;
+    margin-bottom: 26px;
+    min-height: 32px;
+    padding: 7px 16px;
+    position: relative;
+    width: 134px;
+}   
+
+.message-btn-submit:hover {
+    font-weight: 600;
     cursor: pointer;
-    font-family: FontAwesome;
-    font-size: 16px;
-    position: absolute;
-    right: 16px;
+}
+
+.message-btn-submit:focus {
+    outline: none;
+} 
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
+  font-weight: 300;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #fff;
+  font-weight: 300;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #fff;
+  font-weight: 300;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #fff;
+  font-weight: 300;
 }

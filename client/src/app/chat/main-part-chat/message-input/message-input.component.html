@@ -1,8 +1,5 @@
-<!--<div class="message-input" contenteditable="true">
-    Type Something...
-</div>-->
-
-<!--<div *ngFor="let message of messages$ | async">
-  {{message.text}}
-</div>-->
-<input class="message-input" [(ngModel)]="messageText" (keyup.enter)="sendMessage()" /><button (click)="sendMessage()">Send</button>
+<div class="message-input-container">
+  <input class="message-input" [(ngModel)]="messageText" (keyup.enter)="sendMessage()" 
+   Zplaceholder="Input your message"/>
+  <button class="message-btn-submit"(click)="sendMessage()">Send</button>
+</div>

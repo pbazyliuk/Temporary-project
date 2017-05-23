@@ -7,7 +7,7 @@
     <div class="form-profile__container">
       <div class="form-profile__container--narrow">
         <label for="firstnameId" class="form-profile__label" [class.header-has-error]="profileForm.get('firstname').invalid && profileForm.get('firstname').touched">Firstname</label>
-        <input id="firstnameId" class="form-profile__input-field" type="text" placeholder="First Name (required)" value="{{(userInfo$ | async)?.firstname}}"
+        <input disabled id="firstnameId" class="form-profile__input-field" type="text" placeholder="First Name (required)" value="{{(userInfo$ | async)?.firstname}}"
           formControlName="firstname" [class.input-has-error]="profileForm.get('firstname').invalid && profileForm.get('firstname').touched">
         <span *ngIf="profileForm.get('firstname').invalid && profileForm.get('firstname').touched" [class.text-has-error]="(profileForm.get('firstname').dirty || profileForm.get('firstname').touched) && profileForm.get('firstname').errors">
 				<span 

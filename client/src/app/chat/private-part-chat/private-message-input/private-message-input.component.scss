@@ -39,6 +39,10 @@
     cursor: pointer;
 } 
 
+.private-message-btn-submit:focus {
+    outline: none;
+} 
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #fff;
   font-weight: 300;

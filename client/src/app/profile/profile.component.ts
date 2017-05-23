@@ -47,7 +47,7 @@ export class ProfileComponent implements OnInit {
 
     profileSubmit(value: object) {
       this.userInfoNew = {
-        firstname: this.profileForm.value.firstname || this.userInfoCurrent.firstname,
+        // firstname: this.profileForm.value.firstname || this.userInfoCurrent.firstname,
         lastname: this.profileForm.value.lastname || this.userInfoCurrent.lastname,
         email: this.profileForm.value.email || this.userInfoCurrent.email,
         currentpassword: this.profileForm.value.passwords.currentpassword,
